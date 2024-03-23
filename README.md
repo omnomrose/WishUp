@@ -1,3 +1,11 @@
+# WishUp
+- A wishlist web application where users can add, update, and delete their wishes.
+
+# Team members
+- Carolina Loo Xu
+- Jenny McMahon
+- Rose Nguyen
+
 # Installations
 
 - npm init -y // backend
