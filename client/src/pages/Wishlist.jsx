@@ -28,20 +28,26 @@ const Wishlist = () => {
 
     return (
         <div>
-            <h1>WishUp</h1>
+
+            <h1 className="header">wishup</h1>
+            <div className="nav">
+                <h3 className="link">discover</h3>
+                <h3 className="linkActive">my list</h3>
+                <h3 className="link">friends</h3>
+            </div>
             <div className="wishes">
                 {wishes.map(wish => (
                     <div className="wish" key={wish.id}>
-                        {wish.cover && <img src={wish.cover} alt=""/>}
-                        <h2>{wish.title}</h2>
-                        <p>{wish.desc}</p>
-                        <span>{wish.price}</span>
+                        {wish.cover && <img className="img" src={wish.cover} alt="" />}
+                        <h2 className="title">{wish.title}</h2>
+                        <p className="desc">{wish.desc}</p>
+                        <span className="price">{wish.price}</span>
                         <button className="delete" onClick={() => handleDelete(wish.id)}>Delete</button>
-                        <button className="update"><Link to={`/update/${wish.id}`}>Update</Link></button>
+                        <button className="update"><Link className="updateText" to={`/update/${wish.id}`}>Update</Link></button>
                     </div>
                 ))}
             </div>
-            <button><Link to="/add">Add wish</Link></button>
+            <button className="add"><Link className="addText" to="/add">Add wish</Link></button>
         </div>
     );
 };

@@ -21,7 +21,7 @@ const Update = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-  
+
     try {
       await axios.put(`http://localhost:8800/wishlist/${wishId}`, wish);
       navigate("/");
@@ -32,34 +32,38 @@ const Update = () => {
 
   return (
     <div className="form">
-      <h1>Update Wish</h1>
+      <h1 className="header">Update Wish</h1>
       <input
         type="text"
+        className="title"
         placeholder="title"
         name="title"
         onChange={handleChange}
       />
       <textarea
-        rows={5}
+        rows={1.5}
+        className="desc"
         type="text"
         placeholder="desc"
         name="desc"
         onChange={handleChange}
       />
       <input
+        className="price"
         type="number"
         placeholder="price"
         name="price"
         onChange={handleChange}
       />
       <input
+        className="img"
         type="text"
         placeholder="cover"
         name="cover"
         onChange={handleChange}
       />
       <button className="formButton" onClick={handleClick}>Update</button>
-      <Link to="/">See all wishes</Link>
+      <Link className="link" to="/">See all wishes</Link>
     </div>
   );
 };
